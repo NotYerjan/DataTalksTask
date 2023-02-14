@@ -27,3 +27,7 @@ To Start Server:
 To Visit App:
 
 `http://localhost:5173/`  
+
+## Screenshots
+![Screenshot1](/public/screenshot1.png)
+![Screenshot2](/public/screenshot2.png)
