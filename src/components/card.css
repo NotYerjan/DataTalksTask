@@ -1,0 +1,89 @@
+.card {
+  width: 880px;
+  max-width: 100%;
+  padding: 24px;
+  background-color: #fff;
+  box-shadow: 0 0 5px black;
+  border-radius: 8px;
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+/* Card Header */
+.card header {
+  display: flex;
+}
+.card-title {
+  font-weight: 700;
+  font-size: 16px;
+}
+
+/* Card Actions */
+.card-header-actions {
+  margin-left: auto;
+  position: relative;
+}
+.btn-more {
+  height: 24px;
+  width: 24px;
+  border-radius: 50%;
+}
+
+/* Card Actions Popover */
+.btn-more:hover {
+  background-color: #edebeb;
+  fill: #f35625;
+}
+.actions-popover {
+  position: absolute;
+  top: 36px;
+  right: 0;
+  width: 180px;
+  flex-direction: column;
+  gap: 8px;
+  padding: 8px;
+  background-color: #fff;
+  border: 1px solid #eaedf2;
+  box-shadow: 0px 1px 4px rgba(0, 0, 0, 0.05);
+  border-radius: 4px;
+}
+.btn-header-action {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  gap: 8px;
+  font-size: 14px;
+  font-weight: 500;
+}
+hr {
+  border: 1px solid #eaedf2;
+}
+
+/* Card main content */
+.card main {
+  display: flex;
+  gap: 24px;
+  font-weight: 400;
+  font-size: 14px;
+}
+.card-image {
+  flex: 2;
+}
+.card-description {
+  flex: 3;
+}
+.card-image img {
+  width: 100%;
+}
+
+/* Card Footer */
+.card-footer-actions {
+  display: flex;
+  justify-content: end;
+}
+.btn.btn-dismiss {
+  background: #f35625;
+  color: #fff;
+  padding: 10px 36px;
+  font-size: 16px;
+}
