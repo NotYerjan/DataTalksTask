@@ -23,17 +23,14 @@
   margin-left: auto;
   position: relative;
 }
-.btn-more {
+.btn.btn-more {
+  padding: 0;
   height: 24px;
   width: 24px;
   border-radius: 50%;
 }
 
 /* Card Actions Popover */
-.btn-more:hover {
-  background-color: #edebeb;
-  fill: #f35625;
-}
 .actions-popover {
   position: absolute;
   top: 36px;

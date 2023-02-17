@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import CopyIcon from "../icons/CopyIcon";
 import DeleteIcon from "../icons/DeleteIcon";
 import MoreVerticalIcon from "../icons/MoreVerticalIcon";
@@ -6,6 +6,7 @@ import "./card.css";
 
 export default function Card({ content }) {
   const [isPopoverVisible, setIsPopoverVisible] = useState(false);
+  const ref = useRef(null);
 
   const handleClosePopover = () => {
     setIsPopoverVisible(false);
@@ -27,15 +28,28 @@ export default function Card({ content }) {
     alert("You have dismissed the card!");
   };
 
+  useEffect(() => {
+    const handleClickOutside = (event) => {
+      if (ref.current && !ref.current.contains(event.target)) {
+        isPopoverVisible && handleClosePopover();
+      }
+    };
+    document.addEventListener("click", handleClickOutside, true);
+    return () => {
+      document.removeEventListener("click", handleClickOutside, true);
+    };
+  }, [isPopoverVisible]);
+
   return (
     <article className="card">
       <header>
         <h3 className="card-title">{content.title}</h3>
         <div className="card-header-actions">
-          <div className="btn-more" onClick={handleMoreBtn}>
+          <div className="btn btn-more" onClick={handleMoreBtn}>
             <MoreVerticalIcon />
           </div>
           <div
+            ref={ref}
             className="actions-popover"
             style={{ display: isPopoverVisible ? "flex" : "none" }}
           >

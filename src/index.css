@@ -15,6 +15,7 @@ svg {
   background: none;
   border: none;
   border-radius: 6px;
+  cursor: pointer;
 }
 .btn:hover {
   background: #f4f7fc;
